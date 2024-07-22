@@ -380,7 +380,7 @@ export default function Footer() {
               </a>
             </p>
             <p className="mt-4 text-sm text-gray-500 sm:order-first sm:mt-0">
-              © 2022 Company Name
+              © 2024 Ecomerce Next Firebase
             </p>
           </div>
         </div>

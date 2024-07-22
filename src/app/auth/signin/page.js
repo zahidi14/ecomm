@@ -3,8 +3,8 @@
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { auth } from "../../../utils/firebaseConfig";
-export default function test() {
+import { auth } from "../../../firebase/firebaseConfig";
+export default function Test() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();

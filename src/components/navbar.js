@@ -1,14 +1,32 @@
-import React from "react";
+"use client";
+import { CartContext } from "@/context/cartContext";
+import Image from "next/image";
+import React, { useContext, useState } from "react";
 
 const Navbar = () => {
+  const { count } = useContext(CartContext);
+  // const [darkMode, setDarkMode] = useState(false);
+
+  // const darkToggle = () => {
+  //   setDarkMode(!darkMode);
+  //   if (!darkMode) {
+  //     document.documentElement.classList.add("dark");
+  //     localStorage.setItem("darkMode", "true");
+  //   } else {
+  //     document.documentElement.classList.remove("dark");
+  //     localStorage.setItem("darkMode", "false");
+  //   }
+  // };
   return (
     <header className="flex bg-white border-b py-4 sm:px-8 px-6 font-[sans-serif] min-h-[80px] tracking-wide relative z-50">
       <div className="flex flex-wrap items-center lg:gap-y-2 gap-4 w-full">
-        <a href="javascript:void(0)">
-          <img
+        <a href="#">
+          <Image
             src="https://readymadeui.com/readymadeui.svg"
             alt="logo"
             className="w-36"
+            height={500}
+            width={500}
           />
         </a>
         <div
@@ -36,17 +54,19 @@ const Navbar = () => {
           </button>
           <ul className="lg:flex lg:gap-x-3 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-1/2 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-6 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50">
             <li className="mb-6 hidden max-lg:block">
-              <a href="javascript:void(0)">
-                <img
+              <a href="#">
+                <Image
                   src="https://readymadeui.com/readymadeui.svg"
                   alt="logo"
                   className="w-36"
+                  height={500}
+                  width={500}
                 />
               </a>
             </li>
             <li className="max-lg:border-b max-lg:py-3 px-3">
               <a
-                href="javascript:void(0)"
+                href="#"
                 className="text-[#007bff] hover:text-[#007bff] text-[15px] block font-semibold"
               >
                 New
@@ -54,7 +74,7 @@ const Navbar = () => {
             </li>
             <li className="max-lg:border-b max-lg:py-3 px-3">
               <a
-                href="javascript:void(0)"
+                href="#"
                 className="text-[#333] hover:text-[#007bff] text-[15px] block font-semibold"
               >
                 Men
@@ -62,7 +82,7 @@ const Navbar = () => {
             </li>
             <li className="max-lg:border-b max-lg:py-3 px-3">
               <a
-                href="javascript:void(0)"
+                href="#"
                 className="text-[#333] hover:text-[#007bff] text-[15px] block font-semibold"
               >
                 Women
@@ -70,7 +90,7 @@ const Navbar = () => {
             </li>
             <li className="max-lg:border-b max-lg:py-3 px-3">
               <a
-                href="javascript:void(0)"
+                href="#"
                 className="text-[#333] hover:text-[#007bff] text-[15px] block font-semibold"
               >
                 Kids
@@ -125,7 +145,7 @@ const Navbar = () => {
                 />
               </svg>
               <span className="absolute left-auto -ml-1 top-0 rounded-full bg-red-500 px-1 py-0 text-xs text-white">
-                0
+                {count}
               </span>
             </span>
             <button className="px-5 py-2 text-sm rounded-full text-white border-2 border-[#007bff] bg-[#007bff] hover:bg-[#004bff]">
